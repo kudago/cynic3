@@ -31,8 +31,8 @@ import socket
 import select
 import signal
 import optparse
-import StringIO
-import ConfigParser
+import io
+import configparser
 
 from cynic.utils import LOG_UNIX_SOCKET, get_console_logger, get_stream_logger
 
@@ -151,7 +151,7 @@ def _reap_children(signum, frame):
 
 def _load_config(fname):
     """Return an instance of ConfigParser."""
-    config = ConfigParser.ConfigParser()
+    config = configparser.ConfigParser()
     if hasattr(fname, 'readline'):
         config.readfp(fname)
     else:
@@ -339,15 +339,14 @@ def main():
     options, args = parser.parse_args()
 
     if options.dump:
-        print DEFAULT_CONFIG
+        print(DEFAULT_CONFIG)
         sys.exit(0)
 
     path = options.config_path
     if path is None:
-        path = StringIO.StringIO(DEFAULT_CONFIG)
+        path = io.StringIO(DEFAULT_CONFIG)
 
     config = _load_config(path)
     handlers = _get_handler_configs(config)
     ioloop = IOLoop(handlers)
     ioloop.run()
-

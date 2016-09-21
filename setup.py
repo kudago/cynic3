@@ -56,6 +56,6 @@ setup(
     [console_scripts]
     cynic = cynic.server:main
     """,
-    classifiers=filter(None, classifiers.split('\n')),
+    classifiers=[x for x in classifiers.split('\n') if x],
     long_description=read('README.rst') + '\n\n' + read('CHANGES.rst'),
     )
