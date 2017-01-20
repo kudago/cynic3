@@ -41,4 +41,3 @@ class HTTPNoBodyResponse(BaseHTTPHandler):
         self.send_header('Content-Type', self.CONTENT_TYPE)
         self.end_headers()
         # body is not sent
-

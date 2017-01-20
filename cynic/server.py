@@ -34,10 +34,10 @@ import optparse
 import io
 import configparser
 
-from cynic.utils import LOG_UNIX_SOCKET, get_console_logger, get_stream_logger
+from cynic.utils import LOG_UNIX_SOCKET, get_console_logger
 
 READ_ONLY = select.POLLIN
-POLL_TIMEOUT = 500 # 0.5 sec
+POLL_TIMEOUT = 500  # 0.5 sec
 BACKLOG = 5
 
 DEFAULT_CONFIG = """\
@@ -140,7 +140,7 @@ def _reap_children(signum, frame):
         try:
             # wait for all children, do not block
             pid, status = os.waitpid(-1, os.WNOHANG)
-            if pid == 0: # no more zombies
+            if pid == 0:  # no more zombies
                 break
         except:
             # Usually this would be OSError exception
@@ -167,7 +167,7 @@ class HandlerConfig(object):
         self.host = host
         self.port = port
         self.family = family
-        self.socket = None # set up by the server
+        self.socket = None  # set up by the server
 
 
 def _get_handler_configs(config):
@@ -208,14 +208,14 @@ class IOLoop(object):
         address = {
             'inet': (hconfig.host, hconfig.port),
             'unix': hconfig.host,
-            }.get(hconfig.family)
+        }.get(hconfig.family)
         return address
 
     def _get_family(self, hconfig):
         family = {
             'inet': socket.AF_INET,
             'unix': socket.AF_UNIX
-            }.get(hconfig.family)
+        }.get(hconfig.family)
         return family
 
     def _unlink_file(self, hconfig):
@@ -239,7 +239,7 @@ class IOLoop(object):
             logger.info(
                 'Starting %-20r on port %s',
                 config.klass.__name__, config.port or config.host
-                )
+            )
 
             self.fd2config[server.fileno()] = config
 
@@ -254,7 +254,6 @@ class IOLoop(object):
             config.socket = server
 
             poller.register(server, READ_ONLY)
-
 
     def run(self):
         try:
@@ -291,7 +290,7 @@ class IOLoop(object):
 
                     # spawn a child that will handle the request (connection)
                     pid = os.fork()
-                    if pid == 0: # child
+                    if pid == 0:  # child
                         for config in self.fd2config.values():
                             config.socket.close()
                         # run a handler
@@ -329,12 +328,12 @@ def main():
             'Path to an INI configuration file. If no configuration '
             'file is provided then default configuration is applied. '
             'To see the default configuration use -d option described below.'
-            )
         )
+    )
     parser.add_option(
         '-d', '--dump', dest='dump', action='store_true',
         default=False, help='Dump default configuration to STDOUT'
-        )
+    )
 
     options, args = parser.parse_args()
 

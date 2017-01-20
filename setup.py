@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# Copyright (c) 2012 Ruslan Spivak
+# Copyright (c) 2017 Ruslan Spivak, Maxim Muzafarov, Murad Byashimov
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,7 @@
 #
 ###############################################################################
 
-__author__ = 'Ruslan Spivak <ruslan.spivak@gmail.com>'
+__author__ = 'Maxim Muzafarov <m.muzafarov@gmail.com>'
 
 import os
 
@@ -37,18 +37,19 @@ Topic :: Software Development :: Testing
 Operating System :: Unix
 """
 
+
 def read(*rel_names):
     return open(os.path.join(os.path.dirname(__file__), *rel_names)).read()
 
 
 setup(
-    name='cynic',
-    version='1.0',
-    url='https://github.com/rspivak/cynic',
+    name='cynic3',
+    version='3.0',
+    url='https://github.com/m-messiah/cynic3',
     license='MIT',
     description='Test harness to make your system under test cynical',
-    author='Ruslan Spivak',
-    author_email='ruslan.spivak@gmail.com',
+    author='Maxim Muzafarov',
+    author_email='m.muzafarov@gmail.com',
     packages=find_packages(),
     zip_safe=False,
     install_requires=['logsna'],
@@ -58,4 +59,4 @@ setup(
     """,
     classifiers=[x for x in classifiers.split('\n') if x],
     long_description=read('README.rst') + '\n\n' + read('CHANGES.rst'),
-    )
+)

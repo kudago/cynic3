@@ -1,5 +1,5 @@
-What is Cynic?
---------------
+What is Cynic3?
+-----------------
 These days almost any application has several integration points
 like database, payment gateway, or some Web service that it consumes
 over HTTP.
@@ -38,11 +38,11 @@ connection can have different failure scenarios, for example:
 It would be good to be able to test the behavior of our application
 when some of those conditions happen.
 
-**Cynic** tries to help with that testing. Basically it's a test
+**cynic3** tries to help with that testing. Basically it's a test
 harness (test double) that can be used to simulate crafty and devious
 remote systems right from your command line.
 
-Cynic will try hard to cause injury to your system.
+cynic3 will try hard to cause injury to your system.
 
 *Its goal is to make your system under test cynical.*
 
@@ -55,13 +55,13 @@ Installation
 
 ::
 
-    $ [sudo] pip install cynic
+    $ [sudo] pip install cynic3
 
 Or the bleeding edge version from the git master branch:
 
 ::
 
-    $ [sudo] pip install git+https://github.com/rspivak/cynic.git#egg=cynic
+    $ [sudo] pip install git+https://github.com/m-messiah/cynic3.git#egg=cynic3
 
 
 Quick intro
@@ -318,6 +318,6 @@ Acknowledgments
 License
 -------
 
-Copyright (c) 2012 Ruslan Spivak
+Copyright (c) 2017 Ruslan Spivak, Maxim Muzafarov, Murad Byashimov
 
 Published under The MIT License, see LICENSE

@@ -32,6 +32,7 @@ import logsna
 
 LOG_UNIX_SOCKET = '/tmp/_cynic.sock'
 
+
 class LogUnixSocketHandler(handlers.SocketHandler):
     """Sends pickled log records over a Unix domain socket."""
 

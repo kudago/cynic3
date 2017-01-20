@@ -30,6 +30,7 @@ from cynic.handlers.base import BaseHandler
 
 NUM_BYTES = 7
 
+
 class RandomDataResponse(BaseHandler):
     """Sends random bytes from /dev/urandom over TCP socket."""
 
@@ -39,4 +40,3 @@ class RandomDataResponse(BaseHandler):
         data = os.urandom(NUM_BYTES)
         self.logger.info('Sending %d bytes from /dev/urandom' % NUM_BYTES)
         self.connection.send(data)
-

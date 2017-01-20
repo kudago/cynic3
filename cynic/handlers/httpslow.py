@@ -43,7 +43,7 @@ class HTTPSlowResponse(BaseHTTPHandler):
                  client_address,
                  datapath=None,
                  content_type='application/json',
-                 sleep_interval=30, # secs
+                 sleep_interval=30,  # secs
                  ):
         BaseHTTPHandler.__init__(self, connection, client_address, datapath)
         self.CONTENT_TYPE = content_type
@@ -59,6 +59,6 @@ class HTTPSlowResponse(BaseHTTPHandler):
         self.end_headers()
         # send a byte of data every sleep_interval seconds
         for ch in body:
-            self.wfile.write(ch)
+            self.wfile.write(ch.encode())
             self.wfile.flush()
             time.sleep(self.sleep_interval)

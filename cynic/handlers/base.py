@@ -26,7 +26,7 @@ __author__ = 'Ruslan Spivak <ruslan.spivak@gmail.com>'
 
 from http.server import BaseHTTPRequestHandler
 
-from cynic.utils import get_stream_logger # do not call at module level
+from cynic.utils import get_stream_logger  # do not call at module level
 
 
 class BaseHandler(object):
@@ -86,7 +86,7 @@ class BaseHTTPHandler(BaseHTTPRequestHandler):
         self.send_header('Content-Length', len(body))
         self.send_header('Content-Type', self.CONTENT_TYPE)
         self.end_headers()
-        self.wfile.write(body)
+        self.wfile.write(body.encode())
 
     def log_message(self, format, *args):
         """Overridden method from the base class to use our logger."""

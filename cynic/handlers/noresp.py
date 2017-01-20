@@ -28,7 +28,7 @@ import time
 
 from cynic.handlers.base import BaseHandler
 
-SLEEP_TIME = 24 * 60 * 60 # sleep for 24 hours
+SLEEP_TIME = 24 * 60 * 60  # sleep for 24 hours
 
 
 class NoResponse(BaseHandler):
@@ -43,4 +43,3 @@ class NoResponse(BaseHandler):
         self.logger.info(
             'Sleeping for the next 24 hours. No response will be sent.')
         time.sleep(SLEEP_TIME)
-

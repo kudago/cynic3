@@ -38,7 +38,7 @@ class RSTResponse(BaseHandler):
     def handle(self):
         self.logger.info('Sending RST packet')
         sock = self.connection
-        l_onoff = 1 # cause RST to be sent on socket.close()
+        l_onoff = 1  # cause RST to be sent on socket.close()
         l_linger = 0
         ling = struct.pack('ii', l_onoff, l_linger)
         sock.setsockopt(socket.SOL_SOCKET, socket.SO_LINGER, ling)
