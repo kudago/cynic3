@@ -1,5 +1,14 @@
 What is Cynic3?
 -----------------
+
+.. image:: https://img.shields.io/pypi/v/cynic3.svg?style=flat-square
+    :target: https://pypi.python.org/pypi/cynic3
+
+
+.. image:: https://img.shields.io/pypi/dm/cynic3.svg?style=flat-square
+        :target: https://pypi.python.org/pypi/cynic3
+
+
 These days almost any application has several integration points
 like database, payment gateway, or some Web service that it consumes
 over HTTP.
