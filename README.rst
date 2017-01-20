@@ -55,13 +55,13 @@ Installation
 
 ::
 
-    $ [sudo] pip install cynic3
+    $ [sudo] pip3 install cynic3
 
 Or the bleeding edge version from the git master branch:
 
 ::
 
-    $ [sudo] pip install git+https://github.com/m-messiah/cynic3.git#egg=cynic3
+    $ [sudo] pip3 install git+https://github.com/m-messiah/cynic3.git#egg=cynic3
 
 
 Quick intro
