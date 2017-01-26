@@ -70,7 +70,7 @@ Or the bleeding edge version from the git master branch:
 
 ::
 
-    $ [sudo] pip3 install git+https://github.com/m-messiah/cynic3.git#egg=cynic3
+    $ [sudo] pip3 install git+https://github.com/kudago/cynic3.git#egg=cynic3
 
 
 Quick intro
